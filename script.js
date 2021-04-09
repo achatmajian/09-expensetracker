@@ -49,7 +49,9 @@ function updateValues() {
     .reduce((acc, item) => (acc += item), 0) * -1)
     .toFixed(2);
 
-    console.log(expense);
+    balance.innerText = `$${total}`;
+    money_plus.innerText = `$${income}`;
+    money_minus.innerText = `$${expense}`;
 }
 
 // Init app
