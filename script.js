@@ -10,10 +10,24 @@ const dummyTransactions = [
     { id: 1, text: 'Flower', amount: -20 },
     { id: 2, text: 'Salary', amount: 300 },
     { id: 3, text: 'Book', amount: -10 },
-    { id: 4, text: 'Camera', amount: 150 },
+    { id: 4, text: 'Camera', amount: 150 }
 ];
 
 let transactions = dummyTransactions;
+
+// Add transaction 
+function addTransaction(e) {
+    e.preventDefault();
+
+    if(text.value.trim() === '' || amount.value.trim() === '') {
+        alert('Please add text and amount');
+    };
+}
+
+// Generate random ID
+function generateID() {
+    return Math.floor(Math.random() * 100000000);
+}
 
 // Add transactions to DOM list
 function addTransactionDOM(transaction) {
@@ -63,3 +77,5 @@ function init() {
 }
 
 init();
+
+form.addEventListener('submit', addTransaction);
